@@ -4,5 +4,7 @@ const wss = new WebSocketServer({port:8080});
  //event handler 
  wss.on("connection" , function(socket) {
     console.log("User Connection")
-    socket.send("hello")
+    setInterval(() => {
+        socket.send("Current price of solana is : " + Math.random())
+    }, 5000)
  })
